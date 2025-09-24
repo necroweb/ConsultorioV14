@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+	<h1> REGISTRO DE CUIDADORES </h1>    
+<div>
+	<form th:action="@{/user/create}" method="POST">
+		<div th:object="${Cuidador}"> 
+		
+		  <label>Cedula:</label>
+		  <input type="number" name="cedula" th:field="*{cedula}">
+		  <br><br>
+		  <label>Nombre:</label>
+		  <input type="text" name="nombre" th:field="*{nombre}">
+		  <br><br>
+		  <label>Apellido:</label>
+		  <input type="text" name="apellido" th:field="*{apelldido}">
+		  <br><br>
+		  <label>Calle:</label>
+		  <input type="text" name="calle" th:field="*{calle}">
+		  <br><br>
+		  <label>Carrera:</label>
+		  <input type="text" name="carrera" th:field="*{carrera}">
+		  <br><br>
+		  <label>Numero:</label>
+		  <input type="number" name="numero" th:field="*{numero}">
+		  <br><br>
+		  <label>Detalle:</label>
+		  <input type="text" name="datalle" th:field="*{detalle}">
+		  <br><br><br>
+		</div>
+		<div th:object="${Paciente}">
+			<h2>Datos paciente</h2>
+			<label>especie:</label>
+		  	<input type="text" name="especie" th:field="*{especie}">
+			<br><br>
+			<label>raza:</label>
+		  	<input type="text" name="raza" th:field="*{raza}">	
+			<br><br>
+			<label>edad:</label>
+		  	<input type="number" name="edad" th:field="*{edad}">
+		  	<br><br>
+		  	<label>color:</label>
+		  	<input type="text" name="color" th:field="*{color}">	
+		</div>
+			<input type ="submit" value="Enviar">
+	</form>
+</div>
+</body>
+
+</html>

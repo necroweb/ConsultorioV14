@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>CONSULTORIOV14</title>
+    
+</head>
+
+	
+     
+<body>
+
+	
+	<Header class="container">
+		<nav class="d-flex  justify-content-center py-3 mb-4 border-bottom" >
+			<a href="/" class="d-flex align-items-center mb-3  me-md-auto text-dark text-coration-none">
+				<img src="/img/iconmonstr-cat-7.svg"  class="img-fluid imglogo" height="32"/>
+				<span class="fs-4">CONSULTORI-O29</span>
+			</a>
+			
+			
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a href="/" class="nav-link">HOME</a></li>
+					<li class="nav-item"><a href="/user/lista" class="btn btn-secondary">ADMINISTRADOR</a></li>
+				</ul>
+			
+		</nav>
+	</Header>
+	
+	
+	<section class="container">
+		<div class="col">
+			<span class="fw-bold w-auto" >Formulario de Usuario</span>    
+		</div>
+		<div class="row">
+			<form id="form-user" class="mt-4" action="" th:action="@{/user/lista}" method="post">
+				<div th:object="${Cuidador}"> 
+				<!-- 
+					<div class="mb-3"> 
+					 <select class="form-select form-select-sm" name="tipodoc" id="tipodoc" th:field="*{tipoDoc}">
+					  <option value="1"> Tipo de documento </option>
+					  <option value="2"> TI </option>
+					  <option value="3"> CC </option>
+					  <option value="4"> DNI </option>
+					  <option value="5"> PAS </option>
+					 </select> 
+					</div>	  
+			   -->
+					<div class="mb-3">
+					  <label class="form-label">Cedula:</label>
+					  <input type="number" class="form-control" id="user-cedula" name="user-cedula" th:field="*{cedula}">
+					</div>
+					<div class="mb-3">
+					  <label class="form-label">Email:</label>
+					  <input type="email"  class="form-control" id="user-email" name="user-email" th:field="*{email}">
+					</div>
+					<div class="mb-3">
+					  <label class="form-label">Nombre:</label>
+					  <input type="text"  class="form-control" id="user-nombre" name="user-nombre" th:field="*{nombre}">
+					</div>
+					<div class="mb-3">
+					  <label class="form-label">Direccion:</label>
+					  <input type="text"  class="form-control" id="user-direccion" name="user-direccion" th:field="*{direccion}">
+					</div>
+					<div class="mb-3">
+					  <label class="form-label">Telefono:</label>
+					  <input type="number"  class="form-control" id="user-telefono" name="user-telefono" th:field="*{telefono}">
+					</div>
+				</div>
+				
+				<div th:object="${Paciente}">
+					<span class=fw-bold>Datos de Paciente</span>
+					<div class=" mb-3 mt-1">
+						<label  class="form-label">Nombre:</label>
+					  	<input type="text"  class="form-control" id="user-nombrepaciente" name="user-nombrepaciente" th:field="*{nombre}">
+					</div>
+					
+					<div class="mb-3">
+						<label  class="form-label">Especie:</label>
+					  	<input type="text"  class="form-control" id="user-especie" name="user-especie" th:field="*{especie}">	
+					</div>
+					
+					<div class="mb-3">
+						<label  class="form-label">Raza:</label>
+					  	<input type="text"  class="form-control" id="user-raza" name="user-raza" th:field="*{raza}">	
+					</div>
+					
+					<div class="mb-3">
+						<label  class="form-label">Edad:</label>
+					  	<input type="number"  class="form-control" id="user-edad" name="user-edad" th:field="*{edad}">	
+					</div>
+					
+					<!-- 
+					<div class="mb-3 form-check">
+					  <input  type="radio" class="form-check-input" id="sexo1" name="check-sexo1" value="option1" checked th:field="*{sexo}">
+					  <label class="form-check-label" for="sexo1">
+					    Masculino
+					  </label>
+					</div>
+					<div class="mb-3 form-check">
+					  <input type="radio" class="form-check-input" id="sexo2" name="check-sexo2" value="option1" checked th:field="*{sexo}">
+					  <label class="form-check-label" for="sexo2">
+					    Feminino
+					  </label>
+						
+					</div>
+					 -->
+				</div >
+				<div class="mb-3">	
+					<input type ="submit"  class="btn btn-success"  value="Enviar">
+				</div>	
+			</form>
+						
+		</div>
+	
+	</section>
+	
+	 
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+ </body>
+	
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista</title>
+</head>
+
+<body>
+    <h1>Lista Cuidadores</h1>
+    <div>
+	    <table border="solid">
+	    	<thead>
+	    		<tr>
+	    			<th>Cedula</th>
+	    			<th>Nombre</th>
+	    			<th>Apellido</th>
+	    			<th>Calle</th>
+	    			<th>Carrera</th>
+	    			<th>Numero</th>	
+	    			<th>Detalle</th>
+	    			
+	    		</tr>	
+	    	</thead>
+	    	<tbody>
+	    		<tr  th:each="cuidador : ${cuidadores}">
+	    			<td th:text= "${cuidador.cedula}"> Cedula  </td>
+	    			<td th:text= "${cuidador.nombre}"> Nombre </td>
+	    			<td th:text= "${cuidador.apelldido}"> Apellido </td>
+	    			<td th:text= "${cuidador.calle}"> Calle </td>
+	    			<td th:text= "${cuidador.carrera}"> Carrera </td>
+	    			<td th:text= "${cuidador.numero}"> Numero </td>
+	    			<td th:text= "${cuidador.detalle}"> Detalle </td>
+	    			
+	    			<td>
+	    				<a href="#">ACTUALIZAR</a>
+	    				<a href="#">ELIMINAR</a>
+	    			</td>
+	    		</tr>
+	    	</tbody>
+	    </table>
+	    <br> 
+	    <br>
+	    <a href="/user/create">USER CREATE </a>
+    </div>
+</body>
+</html>

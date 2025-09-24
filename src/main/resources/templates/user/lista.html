@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <title>lista</title>
+</head>
+
+<body>
+	<Header class="container">
+		<nav class="d-flex  justify-content-center py-3 mb-4 border-bottom  text-coration-none">
+			<a href="/" class="d-flex align-items-center mb-3  me-md-auto text-dark">
+				<img src="/static/img/iconmonstr-cat-7-240.png"  class="img-fluid imglogo" height="32"/>
+				<span class="fs-4">CONSULTORI-O29</span>
+			</a>
+			
+			
+				<ul class="nav nav-pills">
+					<li class="nav-item"><a href="/" class="nav-link">HOME</a></li>
+					<li class="nav-item"><a href="/user/create" class="nav-link">CREATE USER</a></li>
+					<li class="nav-item"><a href="/citas/cita" class="nav-link">AGENDAR CITA</a></li>
+				</ul>
+			
+		</nav>
+	</Header>
+	<section  class="container">
+		<div>
+	    	<div class="row ">
+		    	<div class="col">
+		    		</div>
+		    		<div class="col-11">
+				    	<table class="table table-dark table-striped table-hover " >
+					    	<thead>
+					    		<tr class="table-primary">
+					    			<th scope="col">Cedula</th>
+					    			<th scope="col">Nombre</th>
+					    			<th scope="col">Apellido</th>
+					    			<th scope="col">Calle</th>
+					    			<th scope="col">Carrera</th>
+					    			<th scope="col">Numero</th>	
+					    			<th scope="col">Detalle</th>
+					    		</tr>	
+					    	</thead>
+					    	<tbody id="users-table">
+					    		<tr  th:each="cuidador : ${cuidadores}">
+					    			<td th:text= "${cuidador.idCuidador}"> idCedula  </td>
+					    			<td th:text= "${cuidador.tipoDoc}"> Cedula  </td>
+					    			<td th:text= "${cuidador.cedula}"> Nombre </td>
+					    			<td th:text= "${cuidador.email}"> Email </td>
+					    			<td th:text= "${cuidador.nombre}"> Direccion </td>
+					    			<td th:text= "${cuidador.direccion}"> Nombre </td>
+					    			<td th:text= "${cuidador.telefono}"> Especie </td>
+					    		
+					    			<td>
+					    				<a class="btn btn-primary" th:href="@{/user/editar/{id}(id=${cuidador.idCuidador})}">ACTUALIZAR</a>
+					    				<a class="btn btn-danger" th:href="@{/user/eliminar/{id}(id=${cuidador.idCuidador})}">ELIMINAR</a>
+					    			</td>
+					    		</tr>
+					    	</tbody>
+				    	</table>
+				    	<div class="col">
+				   	    </div>
+			  	    </div>
+		  		</div>
+		  	</div>
+		</section>  
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+
+</html>
